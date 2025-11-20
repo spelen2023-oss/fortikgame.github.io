@@ -2,31 +2,136 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<title>FortikGame — Minecraft магазин</title>
+<title>FortikObby – Лучший обби-сервер</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Roboto:wght@400;500&display=swap');
-:root {--purple:#6a0dad;--neon:#bb86fc;--gray:#121212;}
-* {margin:0;padding:0;box-sizing:border-box;}
-body {background:linear-gradient(135deg,#1a0033,#000);color:white;font-family:'Roboto',sans-serif;overflow-x:hidden;min-height:100vh;}
-header {position:fixed;top:0;width:100%;padding:20px 5%;background:rgba(26,0,51,0.8);backdrop-filter:blur(10px);z-index:1000;display:flex;justify-content:space-between;align-items:center;}
-.logo {font-family:'Orbitron',sans-serif;font-size:2.5rem;background:linear-gradient(90deg,#bb86fc,#6a0dad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
-nav a {color:#bb86fc;text-decoration:none;margin-left:30px;font-weight:500;transition:0.3s;}
-nav a:hover {color:white;}
-.cart {position:relative;font-size:1.5rem;cursor:pointer;}
-.cart span {position:absolute;top:-8px;right:-10px;background:#ff007a;border-radius:50%;width:20px;height:20px;font-size:12px;line-height:20px;text-align:center;}
-#scene {position:fixed;inset:0;pointer-events:none;z-index:1;}
-main {position:relative;z-index:2;padding-top:120px;}
-.hero {text-align:center;padding:100px 20px 150px;}
-.hero h1 {font-family:'Orbitron',sans-serif;font-size:5rem;margin-bottom:20px;background:linear-gradient(90deg,#bb86fc,#03dac6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
-.hero p {font-size:1.4rem;opacity:0.9;max-width:700px;margin:0 auto 40px;}
-.products {display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;padding:0 5%;max-width:1400px;margin:0 auto 100px;}
-.card {background:rgba(106,13,173,0.2);border-radius:20px;overflow:hidden;backdrop-filter:blur(10px);border:1px solid rgba(187,134,252,0.3);transition:0.4s;text-align:center;padding:30px 20px;}
-.card:hover {transform:translateY(-20px);box-shadow:0 20px 40px rgba(187,134,252,0.4);}
-.card img {width:120px;height:120px;object-fit:contain;margin-bottom:20px;}
-.price {font-size:2rem;color:#bb86fc;font-weight:bold;margin:15px 0;}
-.btn {background:linear-gradient(45deg,#bb86fc,#6a0dad);color:white;border:none;padding:12px 30px;border-radius:50px;cursor:pointer;font-weight:bold;transition:0.3s;}
-.btn:hover {transform:scale(1.1);box-shadow:0 0 20px rgba(187,134,252,0.8);}
-footer {text-align:center;padding:50px;background:rgba(0,0,0,0.5);}
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto:wght@400;700&display=swap');
+
+:root {
+  --blue: #00d4ff;
+  --dark: #0a1f3d;
+  --neon: #00ffea;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  background: linear-gradient(135deg, #0a1f3d, #000);
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+header {
+  position: fixed;
+  top: 0; width: 100%;
+  padding: 20px 5%;
+  background: rgba(10,31,61,0.8);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.8rem;
+  background: linear-gradient(90deg, #00d4ff, #00ffea);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#scene { position: fixed; inset: 0; pointer-events: none; z-index: 1; }
+
+main { position: relative; z-index: 2; padding-top: 120px; text-align: center; }
+
+h1 { font-family: 'Orbitron', sans-serif; font-size: 5rem; margin: 40px 0; 
+     background: linear-gradient(90deg, #00d4ff, #00ffea);
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent; }
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 0 5%;
+  max-width: 1400px;
+  margin: 0 auto 100px;
+}
+
+.card {
+  background: rgba(0,212,255,0.1);
+  border: 1px solid rgba(0,255,234,0.3);
+  border-radius: 20px;
+  padding: 30px;
+  backdrop-filter: blur(10px);
+  transition: 0.4s;
+}
+
+.card:hover { transform: translateY(-15px); box-shadow: 0 20px 40px rgba(0,212,255,0.4); }
+
+.card img { width: 100px; height: 100px; object-fit: contain; }
+
+.price { font-size: 2.2rem; color: var(--neon); margin: 20px 0; font-weight: bold; }
+
+.btn {
+  background: linear-gradient(45deg, #00d4ff, #00ffea);
+  color: #000;
+  border: none;
+  padding: 14px 40px;
+  border-radius: 50px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: 0.3s;
+}
+
+.btn:hover { transform: scale(1.1); box-shadow: 0 0 25px rgba(0,255,234,0.8); }
+
+/* Модальное окно оплаты */
+.modal {
+  display: display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  backdrop-filter: blur(10px);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background: #0a1f3d;
+  border: 2px solid var(--neon);
+  border-radius: 20px;
+  padding: 40px;
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+  box-shadow: 0 0 40px rgba(0,255,234,0.6);
+}
+
+input, select {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 10px;
+  border: 1px solid var(--blue);
+  background: rgba(255,255,255,0.1);
+  color: white;
+  font-size: 1rem;
+}
+
+.pay-btn {
+  background: linear-gradient(45deg, #00ffea, #00d4ff);
+  color: #000;
+  font-size: 1.4rem;
+  padding: 16px;
+  margin-top: 20px;
+}
+
+.close { color: #aaa; float: right; font-size: 2rem; cursor: pointer; }
 </style>
 </head>
 <body>
@@ -34,103 +139,122 @@ footer {text-align:center;padding:50px;background:rgba(0,0,0,0.5);}
 <div id="scene"></div>
 
 <header>
-  <div class="logo">FortikGame</div>
-  <nav>
-    <a href="#">Главная</a>
-    <a href="#">Каталог</a>
-    <a href="#">Поддержка</a>
-    <div class="cart">Корзина <span id="cart-count">0</span></div>
-  </nav>
+  <div class="logo">FortikObby</div>
 </header>
 
 <main>
-  <section class="hero">
-    <h1>FortikGame</h1>
-    <p>Лучшие привилегии и аккаунты Minecraft по вкусным ценам</p>
-  </section>
+  <h1>FortikObby</h1>
+  <p style="font-size:1.5rem;margin-bottom:50px;">Самый крутой обби и паркур сервер Minecraft</p>
 
   <div class="products">
     <div class="card">
       <img src="https://i.imgur.com/2XbO5nT.png" alt="VIP">
       <h3>VIP навсегда</h3>
       <div class="price">299 ₽</div>
-      <button class="btn" onclick="addToCart()">Купить</button>
+      <button class="btn" onclick="openPay('VIP навсегда',299)">Купить</button>
     </div>
     <div class="card">
-      <img src="https://i.imgur.com/J5c7XKo.png" alt="Премиум">
-      <h3>Премиум аккаунт</h3>
-      <div class="price">790 ₽</div>
-      <button class="btn" onclick="addToCart()">Купить</button>
+      <img src="https://i.imgur.com/J5c7XKo.png" alt="PREMIUM">
+      <h3>PREMIUM</h3>
+      <div class="price">499 ₽</div>
+      <button class="btn" onclick="openPay('PREMIUM',499)">Купить</button>
     </div>
     <div class="card">
-      <img src="https://i.imgur.com/8D8K8fJ.png" alt="Кейсы">
-      <h3>10 донат-кейсов</h3>
-      <div class="price">999 ₽</div>
-      <button class="btn" onclick="addToCart()">Купить</button>
+      <img src="https://i.imgur.com/8D8K8fJ.png" alt="FLY">
+      <h3>Полёт /fly</h3>
+      <div class="price">799 ₽</div>
+      <button class="btn" onclick="openPay('Полёт /fly',799)">Купить</button>
     </div>
   </div>
 </main>
 
-<footer>© 2025 FortikGame • support@fortikgame.ru</footer>
+<!-- Окно оплаты -->
+<div id="payModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="document.getElementById('payModal').style.display='none'">×</span>
+    <h2>Оплата <span id="itemName"></span></h2>
+    <p style="font-size:2rem;color:var(--neon);margin:20px 0" id="itemPrice"></p>
+    
+    <input type="text" placeholder="Номер карты (1111 2222 3333 4444)" maxlength="19" id="cardNumber">
+    <div style="display:flex;gap:15px;">
+      <input type="text" placeholder="MM/YY" maxlength="5">
+      <input type="text" placeholder="CVV" maxlength="3">
+    </div>
+    <input type="text" placeholder="Имя на карте">
+    
+    <button class="btn pay-btn" onclick="alert('Оплата прошла успешно! Привилегия выдана'); 
+    document.getElementById('payModal').style.display='none'">Оплатить</button>
+  </div>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/three@0.169.0/examples/js/loaders/GLTFLoader.js"></script>
 <script>
+// 3D фон
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(60, innerWidth/innerHeight, 0.1, 1000);
-const renderer = new THREE.WebGLRenderer({alpha:true,antialias:true});
+const renderer = new THREE.WebGLRenderer({alpha:true, antialias:true});
 renderer.setSize(innerWidth, innerHeight);
 document.getElementById('scene').appendChild(renderer.domElement);
 
-scene.add(new THREE.AmbientLight(0xffffff,0.6));
-const light = new THREE.DirectionalLight(0xbb86fc,1);
-light.position.set(5,10,7); scene.add(light);
+scene.add(new THREE.AmbientLight(0xffffff, 0.7));
+const light = new THREE.DirectionalLight(0x00d4ff, 1.5);
+light.position.set(5,10,7);
+scene.add(light);
 
-const crystal = new THREE.Mesh(
-  new THREE.DodecahedronGeometry(2),
-  new THREE.MeshStandardMaterial({color:0xbb86fc,emissive:0x6a0dad,emissiveIntensity:0.8,metalness:0.9,roughness:0.1,transparent:true,opacity:0.9})
+// Вращающийся алмаз
+const diamond = new THREE.Mesh(
+  new THREE.OctahedronGeometry(2,0),
+  new THREE.MeshStandardMaterial({color:0x00eeff, emissive:0x00d4ff, metalness:1, roughness:0})
 );
-crystal.position.z = -10;
-scene.add(crystal);
+diamond.position.set(0,0,-10);
+scene.add(diamond);
 
-let bear;
+// 3D кролик
+let rabbit;
 const loader = new THREE.GLTFLoader();
-loader.load('https://raw.githubusercontent.com/mrdoob/three.js/master/examples/models/gltf/PolarBear/PolarBear.gltf', (gltf)=>{
-  bear = gltf.scene;
-  bear.scale.set(3,3,3);
-  bear.position.set(0,-4,-8);
-  scene.add(bear);
+loader.load('https://raw.githubusercontent.com/mrdoob/three.js/master/examples/models/gltf/Rabbit.glb', (gltf)=>{
+  rabbit = gltf.scene;
+  rabbit.scale.set(4,4,4);
+  rabbit.position.set(0,-5,-10);
+  scene.add(rabbit);
 });
 
-camera.position.z = 10;
+camera.position.z = 12;
 
 function animate(){
   requestAnimationFrame(animate);
-  crystal.rotation.x += 0.005;
-  crystal.rotation.y += 0.01;
-  if(bear){
-    const x = (event ? (event.clientX/innerWidth*2-1) : 0);
-    const y = (event ? -(event.clientY/innerHeight*2+1) : 0);
-    bear.rotation.y = x*0.4;
-    bear.rotation.x = y*0.3;
+  diamond.rotation.x += 0.01;
+  diamond.rotation.y += 0.015;
+  if(rabbit){
+    const x = (event?.clientX / innerWidth * 2 - 1) || 0;
+    const y = -(event?.clientY / innerHeight * 2 + 1) || 0;
+    rabbit.rotation.y = x * 0.FullScreen;
   }
   renderer.render(scene,camera);
 }
 animate();
 
-addEventListener('mousemove', (e)=>{ event = e; });
-addEventListener('resize',()=>{
-  camera.aspect = innerWidth/innerHeight;
-  camera.updateProjectionMatrix();
-  renderer.setSize(innerWidth,innerHeight);
-});
+addEventListener('mousemove', e => event = e);
+addEventListener('resize', ()=>{ camera.aspect = innerWidth/innerHeight; camera.updateProjectionMatrix(); renderer.setSize(innerWidth,innerHeight); });
 
-let count=0;
-function addToCart(){
-  count++;
-  document.getElementById('cart-count').textContent = count;
-  alert('Добавлено в корзину!');
+// Форма оплаты
+function openPay(name, price){
+  document.getElementById('itemName').textContent = name;
+  document.getElementById('itemPrice').textContent = price + ' ₽';
+  document.getElementById('payModal').style.display = 'flex';
 }
+
+// Автоформат номера карты
+document.getElementById('cardNumber')?.addEventListener('input', function (e) {
+  let v = e.target.value.replace(/\s/g, '').replace(/[^0-9]/gi, '');
+  let matches = v.match(/\d{4,16}/g);
+  let match = matches && matches[0] || '';
+  let parts = [];
+  for (let i=0, len=match.length; i<len; i+=4) parts.push(match.substring(i, i+4));
+  if (parts.length) e.target.value = parts.join(' ');
+  else e.target.value = v;
+});
 </script>
 </body>
 </html>
